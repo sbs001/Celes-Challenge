@@ -1,0 +1,11 @@
+@mixin fadeInAnimation($duration)
+  animation: fadeIn $duration ease-in-out
+  @keyframes fadeIn
+    from
+      opacity: 0
+    to
+      opacity: 1
+
+@mixin animationDelay($duration)
+  animation-delay: $duration
+  animation-fill-mode: both

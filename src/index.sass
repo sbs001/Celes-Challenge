@@ -1,0 +1,37 @@
+@use './styles/variables'
+
+*
+  margin: 0
+  padding: 0
+  object-fit: contain
+  text-decoration: none
+  font-family: var(--font)
+  color: var(--blue-1)
+  box-sizing: border-box
+  background-color: transparent
+  -webkit-tap-highlight-color: transparent
+  ::-webkit-scrollbar-track
+    background-color: var(--gray-5)
+  ::-webkit-scrollbar
+    width: 6px
+  ::-webkit-scrollbar-thumb
+    border-radius: 50px
+    background-color: var(--gray-60)
+
+ul, ol
+  list-style: none
+
+html
+  height: -webkit-fill-available
+  scroll-behavior: smooth
+
+body, #root
+  height: 100%
+  height: stretch
+  height: -moz-available
+  height: -webkit-fill-available
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+input
+  outline: none
