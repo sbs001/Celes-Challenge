@@ -7,7 +7,7 @@ interface HomeDashboardProps { }
 const HomeDashboard: FC<HomeDashboardProps> = () => {
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="home-dashboard">
 
       <h1 className={styles.title}>
         Simple SKUs Management Dashboard

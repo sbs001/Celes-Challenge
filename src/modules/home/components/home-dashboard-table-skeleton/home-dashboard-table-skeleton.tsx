@@ -6,7 +6,7 @@ interface HomeDashboardTableSkeletonProps { }
 const HomeDashboardTableSkeleton: FC<HomeDashboardTableSkeletonProps> = () => {
 
   return (
-    <>
+    <tbody data-testid="home-dashboard-table-skeleton">
       {[1, 2, 3, 4, 5, 6].map((row) => (
         <tr
           className={styles.tr}
@@ -19,7 +19,7 @@ const HomeDashboardTableSkeleton: FC<HomeDashboardTableSkeletonProps> = () => {
           ))}
         </tr>
       ))}
-    </>
+    </tbody>
   );
 }
 

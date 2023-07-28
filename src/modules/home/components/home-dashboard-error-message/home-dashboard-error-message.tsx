@@ -6,7 +6,7 @@ interface HomeDashboardErrorMessageProps { }
 const HomeDashboardErrorMessage: FC<HomeDashboardErrorMessageProps> = () => {
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="home-dashboard-error-message">
       <h1 className={styles.title}>We're sorry :(</h1>
 
       <p className={styles.body}>

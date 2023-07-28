@@ -23,7 +23,7 @@ const HomeDashboardTable: FC<HomeDashboardTableProps> = ({
   }, [wrapperRef])
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
+    <div className={styles.wrapper} ref={wrapperRef} data-testid="home-dashboard-table">
       <table className={styles.table}>
         <thead className={styles.header}>
           <tr className={styles.tr}>
@@ -33,13 +33,15 @@ const HomeDashboardTable: FC<HomeDashboardTableProps> = ({
               </th>
             ))}
           </tr>
-        </thead>
 
-        {hasNoResults && (
-          <th colSpan={4} className={styles.noResults}>
-            No results for your search. Please try again
-          </th>
-        )}
+          {hasNoResults && (
+            <tr className={styles.noResults} data-testid="home-dashboard-no-results">
+              <th colSpan={4} className={styles.th}>
+                No results for your search. Please try again
+              </th>
+            </tr>
+          )}
+        </thead>
 
         {isLoading
           ? <HomeDashboardTableSkeleton />
