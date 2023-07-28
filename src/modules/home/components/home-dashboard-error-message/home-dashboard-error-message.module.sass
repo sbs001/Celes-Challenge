@@ -1,0 +1,19 @@
+@use "src/styles" as *
+
+.wrapper
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin-top: 100px
+  row-gap: 16px
+  .title, .body
+    +fadeInAnimation(0.5s)
+    text-align: center
+  .title
+    @extend %Bold-H1
+  .body
+    color: var(--blue-2)
+    @extend %Regular-H4
+    +animationDelay(0.3s)
