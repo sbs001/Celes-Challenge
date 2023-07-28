@@ -15,7 +15,7 @@ const HomeDashboardContentWrapper: FC<HomeDashboardContentWrapperProps> = () => 
   if (isFetchingError) return <HomeDashboardErrorMessage />
   
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.wrapper} data-testid="home-dashboard-content-wrapper">
       <HomeDashboardSearchBar searchProducts={searchProducts} />
 
       <HomeDashboardTable

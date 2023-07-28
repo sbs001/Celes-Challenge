@@ -23,7 +23,7 @@ const HomeDashboardSearchBar: FC<HomeDashboardSearchBarProps> = ({ searchProduct
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="home-dashboard-search-bar">
 
       <MagnifyingGlass size={24} />
 
@@ -37,7 +37,12 @@ const HomeDashboardSearchBar: FC<HomeDashboardSearchBarProps> = ({ searchProduct
       />
 
       {showClearIcon && (
-        <X size={24} className={styles.closeIcon} onClick={onClearClick} />
+        <X
+          size={24}
+          onClick={onClearClick}
+          data-testid="home-dashboard-search-bar-clear-icon"
+          className={styles.closeIcon}
+        />
       )}
     </div>
   );
