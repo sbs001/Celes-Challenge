@@ -1,0 +1,15 @@
+@use "src/styles" as *
+
+.tr
+  height: 48px
+  .td
+    &:nth-child(2)
+      .skeleton
+        width: calc( (100% / 4)* 3)
+        margin: 0
+  .skeleton
+    +skeletonAnimation()
+    background-color: var(--gray-1)
+    width: 60px
+    height: 24px
+    margin: 0 auto

@@ -1,0 +1,29 @@
+@use "src/styles" as *
+
+.wrapper
+  display: flex
+  height: 48px
+  align-items: center
+  border-radius: 4px
+  border: 1px solid var(--gray-1)
+  padding: 0 24px
+  column-gap: 16px
+  transition: 0.3s
+  &:focus-within
+    border-color: var(--blue-2)
+  .input
+    height: 100%
+    flex: 1
+    @extend %Regular-Body
+    &::placeholder
+      color: var(--gray-4)
+  .closeIcon
+    cursor: pointer
+    +fadeInAnimation(0.5s)
+    transition: 0.5s
+    border-radius: 100%
+    padding: 4px
+    &:hover
+      transform: rotate(180deg)
+      background-color: var(--blue-3)
+      fill: var(--white-1)
