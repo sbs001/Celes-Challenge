@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import { DASHBOARD_TABLE_COLUMNS } from "../../constants";
 import { Product } from "../../entities";
 import styles from "./home-dashboard-table.module.sass";
 import HomeDashboardTableSkeleton from "../home-dashboard-table-skeleton";
+import HomeDashboardSkuModalDetail from "../home-dashboard-sku-modal-detail";
 
 interface HomeDashboardTableProps {
   products: Product[];
@@ -14,6 +15,7 @@ const HomeDashboardTable: FC<HomeDashboardTableProps> = ({
   isLoading, products, hasNoResults
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const [skuSelected, setSkuSelected] = useState<Product | null>(null);
 
   useEffect(() => {
     if (wrapperRef.current) {
@@ -46,25 +48,34 @@ const HomeDashboardTable: FC<HomeDashboardTableProps> = ({
         {isLoading
           ? <HomeDashboardTableSkeleton />
           : (
-            <tbody>
-              {products.map((row) => (
-                <React.Fragment key={`home-dashboard-table-row-${row.id}`}>
-                  {row.variants.map((variant) =>
+            <tbody className={styles.body}>
+              {products.map((product) => (
+                <React.Fragment key={`home-dashboard-table-product-${product.id}`}>
+                  {product.variants.map((variant) => (
                     <tr
                       className={styles.tr}
                       key={`home-dashboard-table-variant-${variant.sku}`}
+                      onClick={() => setSkuSelected(product)}
                     >
                       <td className={styles.td}>{variant.sku}</td>
-                      <td className={styles.td}>{row.title}</td>
+                      <td className={styles.td}>{product.title}</td>
                       <td className={styles.td}>{variant.inventory_quantity}</td>
                       <td className={styles.td}>{variant.old_inventory_quantity}</td>
                     </tr>
-                  )}
+                  ))}
                 </React.Fragment>
               ))}
             </tbody>
           )}
       </table>
+
+      {!!skuSelected && (
+        <HomeDashboardSkuModalDetail
+          product={skuSelected}
+          onClose={() => setSkuSelected(null)}
+        />
+      )}
+
     </div>
   );
 }
