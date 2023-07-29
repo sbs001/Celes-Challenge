@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Celes-Challenge/static/css/main.b93ad521.css",
+    "main.js": "/Celes-Challenge/static/js/main.a94bc35b.js",
+    "static/media/celes-logo.png": "/Celes-Challenge/static/media/celes-logo.d73b419dc813104e1dc9.png",
+    "static/media/right-side.png": "/Celes-Challenge/static/media/right-side.e87aa1f82403768427e7.png",
+    "static/media/left-side.png": "/Celes-Challenge/static/media/left-side.5aa8903ae8301e1d1a61.png",
+    "index.html": "/Celes-Challenge/index.html",
+    "main.b93ad521.css.map": "/Celes-Challenge/static/css/main.b93ad521.css.map",
+    "main.a94bc35b.js.map": "/Celes-Challenge/static/js/main.a94bc35b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b93ad521.css",
+    "static/js/main.a94bc35b.js"
+  ]
+}
